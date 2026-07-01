@@ -21,6 +21,12 @@
       "enabled": false
     },
     {
+      "description": "Disable Ubuntu image updates.",
+      "matchManagers": ["github-actions"],
+      "matchDatasources": ["github-runners"],
+      "enabled": false
+    },
+    {
       "description": "Group GitHub Actions updates.",
       "matchManagers": ["custom.regex", "github-actions"],
       "groupName": "GitHub Actions",
@@ -43,6 +49,19 @@
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "github-actions",
       "autoReplaceStringTemplate": "{{{depName}}}@{{{newDigest}}} # {{{newValue}}}"
+    },
+    {
+      "customType": "regex",
+      "description": "Update Docker (some) Docker images in templates.",
+      "managerFilePatterns": [
+        "/^scripts\\/split_tox_gh_actions\\/templates\\/test_group\\.jinja$/"
+      ],
+      "matchStrings": [
+        "(?<depName>ghcr\\.io\\/getsentry\\/image-mirror-library-[A-Za-z0-9_.-]+):(?<currentValue>[A-Za-z0-9_.-]+)"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker",
+      "autoReplaceStringTemplate": "{{{depName}}}:{{{newValue}}}"
     }
   ]
 }
