@@ -15,9 +15,13 @@
   },
   "packageRules": [
     {
+      "description": "Disable pyproject.toml version updates.",
+      "matchManagers": ["pep621"],
+      "enabled": false
+    },
+    {
       "description": "Group uv.lock updates.",
       "matchManagers": ["pep621"],
-      "rangeStrategy": "update-lockfile",
       "groupName": "Packages",
       "groupSlug": "packages",
       "separateMajorMinor": false,
@@ -37,7 +41,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Update GitHub Actions uses refs in workflow templates",
+      "description": "Update GitHub Actions in templates.",
       "managerFilePatterns": [
         "/^scripts\\/split_tox_gh_actions\\/templates\\/(test_group|test_orchestrator)\\.jinja$/"
       ],
