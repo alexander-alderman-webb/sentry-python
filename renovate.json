@@ -13,40 +13,19 @@
   "lockFileMaintenance": {
     "enabled": true
   },
-  "packageRules": [
-    {
-      "description": "Group package updates.",
-      "matchManagers": ["pep621"],
-      "groupName": "Packages",
-      "groupSlug": "packages",
-      "separateMajorMinor": false,
-      "separateMinorPatch": false,
-      "separateMultipleMajor": false
-    },
-    {
-      "description": "Group GitHub Actions updates.",
-      "matchManagers": ["custom.regex", "github-actions"],
-      "groupName": "GitHub Actions",
-      "groupSlug": "github-actions",
-      "separateMajorMinor": false,
-      "separateMinorPatch": false,
-      "separateMultipleMajor": false
-    }
-  ],
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Update actions/checkout in workflow templates",
+      "description": "Update GitHub Actions uses refs in workflow templates",
       "managerFilePatterns": [
         "/^scripts\\/split_tox_gh_actions\\/templates\\/(test_group|test_orchestrator)\\.jinja$/"
       ],
       "matchStrings": [
-        "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)actions\\/checkout@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})"
+        "uses:[ \\t]+(?<depName>[A-Za-z0-9_.-]+\\/[A-Za-z0-9_.-]+(?:\\/[A-Za-z0-9_.-]+)*)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2}|main)"
       ],
-      "depNameTemplate": "actions/checkout",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0"
+      "autoReplaceStringTemplate": "uses: {{{depName}}}@{{{newDigest}}} # {{{newValue}}}"
     }
   ]
 }
