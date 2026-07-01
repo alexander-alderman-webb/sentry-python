@@ -31,6 +31,12 @@
       "separateMajorMinor": false,
       "separateMinorPatch": false,
       "separateMultipleMajor": false
+    },
+    {
+      "description": "Disable digest-only updates for GitHub Actions",
+      "matchManagers": ["custom.regex", "github-actions"],
+      "matchUpdateTypes": ["digest"],
+      "enabled": false
     }
   ],
   "customManagers": [
