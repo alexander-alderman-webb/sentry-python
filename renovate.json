@@ -31,12 +31,6 @@
       "separateMajorMinor": false,
       "separateMinorPatch": false,
       "separateMultipleMajor": false
-    },
-    {
-      "description": "Disable digest-only updates for GitHub Actions",
-      "matchManagers": ["custom.regex", "github-actions"],
-      "matchUpdateTypes": ["digest"],
-      "enabled": false
     }
   ],
   "customManagers": [
@@ -54,7 +48,7 @@
         "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/upload-artifact)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})",
         "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/download-artifact)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})"
       ],
-      "autoReplaceStringTemplate": "{{{indent}}}{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
+      "autoReplaceStringTemplate": "{{{indent}}}{{{depName}}}@{{{currentDigest}}} # {{{newValue}}}",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "github-actions"
     }
