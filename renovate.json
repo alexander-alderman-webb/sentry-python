@@ -46,77 +46,7 @@
       "depNameTemplate": "actions/checkout",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{indent}}}actions/checkout@{{{currentDigest}}} # {{{newValue}}}"
-    },
-    {
-      "customType": "regex",
-      "description": "Update astral-sh/setup-uv in workflow templates",
-      "managerFilePatterns": [
-        "/^scripts\\/split_tox_gh_actions\\/templates\\/(test_group|test_orchestrator)\\.jinja$/"
-      ],
-      "matchStrings": [
-        "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)astral-sh\\/setup-uv@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})"
-      ],
-      "depNameTemplate": "astral-sh/setup-uv",
-      "datasourceTemplate": "github-tags",
-      "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{indent}}}astral-sh/setup-uv@{{{currentDigest}}} # {{{newValue}}}"
-    },
-    {
-      "customType": "regex",
-      "description": "Update getsentry/action-clickhouse-in-ci in workflow templates",
-      "managerFilePatterns": [
-        "/^scripts\\/split_tox_gh_actions\\/templates\\/(test_group|test_orchestrator)\\.jinja$/"
-      ],
-      "matchStrings": [
-        "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)getsentry\\/action-clickhouse-in-ci@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})"
-      ],
-      "depNameTemplate": "getsentry/action-clickhouse-in-ci",
-      "datasourceTemplate": "github-tags",
-      "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{indent}}}getsentry/action-clickhouse-in-ci@{{{currentDigest}}} # {{{newValue}}}"
-    },
-    {
-      "customType": "regex",
-      "description": "Update actions/setup-java in workflow templates",
-      "managerFilePatterns": [
-        "/^scripts\\/split_tox_gh_actions\\/templates\\/(test_group|test_orchestrator)\\.jinja$/"
-      ],
-      "matchStrings": [
-        "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)actions\\/setup-java@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})"
-      ],
-      "depNameTemplate": "actions/setup-java",
-      "datasourceTemplate": "github-tags",
-      "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{indent}}}actions/setup-java@{{{currentDigest}}} # {{{newValue}}}"
-    },
-    {
-      "customType": "regex",
-      "description": "Update actions/upload-artifact in workflow templates",
-      "managerFilePatterns": [
-        "/^scripts\\/split_tox_gh_actions\\/templates\\/(test_group|test_orchestrator)\\.jinja$/"
-      ],
-      "matchStrings": [
-        "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)actions\\/upload-artifact@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})"
-      ],
-      "depNameTemplate": "actions/upload-artifact",
-      "datasourceTemplate": "github-tags",
-      "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{indent}}}actions/upload-artifact@{{{currentDigest}}} # {{{newValue}}}"
-    },
-    {
-      "customType": "regex",
-      "description": "Update actions/download-artifact in workflow templates",
-      "managerFilePatterns": [
-        "/^scripts\\/split_tox_gh_actions\\/templates\\/(test_group|test_orchestrator)\\.jinja$/"
-      ],
-      "matchStrings": [
-        "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)actions\\/download-artifact@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})"
-      ],
-      "depNameTemplate": "actions/download-artifact",
-      "datasourceTemplate": "github-tags",
-      "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{indent}}}actions/download-artifact@{{{currentDigest}}} # {{{newValue}}}"
+      "autoReplaceStringTemplate": "{{{indent}}}actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # {{{newValue}}}"
     }
   ]
 }
