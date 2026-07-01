@@ -13,6 +13,26 @@
   "lockFileMaintenance": {
     "enabled": true
   },
+  "packageRules": [
+    {
+      "description": "Group package updates.",
+      "matchManagers": ["pep621"],
+      "groupName": "Packages",
+      "groupSlug": "packages",
+      "separateMajorMinor": false,
+      "separateMinorPatch": false,
+      "separateMultipleMajor": false
+    },
+    {
+      "description": "Group GitHub Actions updates.",
+      "matchManagers": ["custom.regex", "github-actions"],
+      "groupName": "GitHub Actions",
+      "groupSlug": "github-actions",
+      "separateMajorMinor": false,
+      "separateMinorPatch": false,
+      "separateMultipleMajor": false
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
