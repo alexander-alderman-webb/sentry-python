@@ -45,7 +45,7 @@
       ],
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "uses: {{{depName}}}@{{{newDigest}}} # {{{newValue}}}"
+      "autoReplaceStringTemplate": "{{{depName}}}@{{{newDigest}}} # {{{newValue}}}"
     }
   ]
 }
