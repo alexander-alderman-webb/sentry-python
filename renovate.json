@@ -47,14 +47,14 @@
         "/^scripts\\/split_tox_gh_actions\\/templates\\/(test_group|test_orchestrator)\\.jinja$/"
       ],
       "matchStrings": [
-        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/checkout)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})",
-        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>astral-sh\\/setup-uv)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})",
-        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>getsentry\\/action-clickhouse-in-ci)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})",
-        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/setup-java)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})",
-        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/upload-artifact)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})",
-        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/download-artifact)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})"
+        "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/checkout)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})",
+        "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>astral-sh\\/setup-uv)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})",
+        "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>getsentry\\/action-clickhouse-in-ci)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})",
+        "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/setup-java)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})",
+        "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/upload-artifact)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})",
+        "(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/download-artifact)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})"
       ],
-      "autoReplaceStringTemplate": "{{{lineStart}}}{{{indent}}}{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
+      "autoReplaceStringTemplate": "{{{indent}}}{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "github-actions"
     }
