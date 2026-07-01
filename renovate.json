@@ -21,15 +21,6 @@
       "enabled": false
     },
     {
-      "description": "Group uv.lock updates.",
-      "matchManagers": ["pep621"],
-      "groupName": "Packages",
-      "groupSlug": "packages",
-      "separateMajorMinor": false,
-      "separateMinorPatch": false,
-      "separateMultipleMajor": false
-    },
-    {
       "description": "Group GitHub Actions updates.",
       "matchManagers": ["custom.regex", "github-actions"],
       "groupName": "GitHub Actions",
