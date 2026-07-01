@@ -46,7 +46,7 @@
       "depNameTemplate": "actions/checkout",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{indent}}}actions/checkout@{{{newDigest}}} # {{{newValue}}}"
+      "autoReplaceStringTemplate": "{{{indent}}}actions/checkout@{{{currentDigest}}} # {{{newValue}}}"
     },
     {
       "customType": "regex",
@@ -60,7 +60,7 @@
       "depNameTemplate": "astral-sh/setup-uv",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{indent}}}astral-sh/setup-uv@{{{newDigest}}} # {{{newValue}}}"
+      "autoReplaceStringTemplate": "{{{indent}}}astral-sh/setup-uv@{{{currentDigest}}} # {{{newValue}}}"
     },
     {
       "customType": "regex",
@@ -74,7 +74,7 @@
       "depNameTemplate": "getsentry/action-clickhouse-in-ci",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{indent}}}getsentry/action-clickhouse-in-ci@{{{newDigest}}} # {{{newValue}}}"
+      "autoReplaceStringTemplate": "{{{indent}}}getsentry/action-clickhouse-in-ci@{{{currentDigest}}} # {{{newValue}}}"
     },
     {
       "customType": "regex",
@@ -88,7 +88,7 @@
       "depNameTemplate": "actions/setup-java",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{indent}}}actions/setup-java@{{{newDigest}}} # {{{newValue}}}"
+      "autoReplaceStringTemplate": "{{{indent}}}actions/setup-java@{{{currentDigest}}} # {{{newValue}}}"
     },
     {
       "customType": "regex",
@@ -102,7 +102,7 @@
       "depNameTemplate": "actions/upload-artifact",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{indent}}}actions/upload-artifact@{{{newDigest}}} # {{{newValue}}}"
+      "autoReplaceStringTemplate": "{{{indent}}}actions/upload-artifact@{{{currentDigest}}} # {{{newValue}}}"
     },
     {
       "customType": "regex",
@@ -116,7 +116,7 @@
       "depNameTemplate": "actions/download-artifact",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{indent}}}actions/download-artifact@{{{newDigest}}} # {{{newValue}}}"
+      "autoReplaceStringTemplate": "{{{indent}}}actions/download-artifact@{{{currentDigest}}} # {{{newValue}}}"
     }
   ]
 }
