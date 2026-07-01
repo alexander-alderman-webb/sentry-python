@@ -47,16 +47,16 @@
         "/^scripts\\/split_tox_gh_actions\\/templates\\/(test_group|test_orchestrator)\\.jinja$/"
       ],
       "matchStrings": [
-        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/checkout)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})(?<lineEnd>[ \\t]*)(?=\\n|$)",
-        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>astral-sh\\/setup-uv)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})(?<lineEnd>[ \\t]*)(?=\\n|$)",
-        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>getsentry\\/action-clickhouse-in-ci)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})(?<lineEnd>[ \\t]*)(?=\\n|$)",
-        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/setup-java)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})(?<lineEnd>[ \\t]*)(?=\\n|$)",
-        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/upload-artifact)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})(?<lineEnd>[ \\t]*)(?=\\n|$)",
-        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/download-artifact)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})(?<lineEnd>[ \\t]*)(?=\\n|$)"
+        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/checkout)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})(?<lineEnd>[ \\t]*(?:\\n|$))",
+        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>astral-sh\\/setup-uv)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})(?<lineEnd>[ \\t]*(?:\\n|$))",
+        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>getsentry\\/action-clickhouse-in-ci)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})(?<lineEnd>[ \\t]*(?:\\n|$))",
+        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/setup-java)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})(?<lineEnd>[ \\t]*(?:\\n|$))",
+        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/upload-artifact)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})(?<lineEnd>[ \\t]*(?:\\n|$))",
+        "(?<lineStart>^|\\n)(?<indent>[ \\t]*(?:-[ \\t]+)?uses:[ \\t]+)(?<depName>actions\\/download-artifact)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]+(?<currentValue>v?\\d+(?:\\.\\d+){0,2})(?<lineEnd>[ \\t]*(?:\\n|$))"
       ],
+      "autoReplaceStringTemplate": "{{{lineStart}}}{{{indent}}}{{{depName}}}@{{#if newDigest}}{{{newDigest}}}{{else}}{{{currentDigest}}}{{/if}} # {{{newValue}}}{{{lineEnd}}}",
       "datasourceTemplate": "github-tags",
-      "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{lineStart}}}{{{indent}}}{{{depName}}}@{{#if newDigest}}{{{newDigest}}}{{else}}{{{currentDigest}}}{{/if}} # {{{newValue}}}{{{lineEnd}}}"
+      "versioningTemplate": "github-actions"
     }
   ]
 }
