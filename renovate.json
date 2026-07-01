@@ -15,8 +15,9 @@
   },
   "packageRules": [
     {
-      "description": "Group package updates.",
+      "description": "Group uv.lock updates.",
       "matchManagers": ["pep621"],
+      "rangeStrategy": "update-lockfile",
       "groupName": "Packages",
       "groupSlug": "packages",
       "separateMajorMinor": false,
