@@ -46,7 +46,7 @@
       "depNameTemplate": "actions/checkout",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "github-actions",
-      "autoReplaceStringTemplate": "{{{indent}}}actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # {{{newValue}}}"
+      "autoReplaceStringTemplate": "{{{indent}}}actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0"
     }
   ]
 }
